@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.allegation_svg {
+  stroke-width: 0.7px;
+  fill-rule:nonzero;
+  fill-opacity:1;
+  stroke: transparent;
+  
+}
+
+
+.accordion-body .accordion-button {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+.nav-pills .nav-link.active {
+  background: #512da8;
+}
+
+.wallet-adapter-button-trigger {
+  background-color:#512da8 !important;
+}
+
+
+@screen sm {
+
+  .collapse.show {
+display: block !important; 
+  }
+  .fade.show.active {
+opacity: 1 !important;
+  }
+}

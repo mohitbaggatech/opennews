@@ -1,0 +1,262 @@
+{
+  "version": "0.1.0",
+  "name": "solana_news",
+  "instructions": [
+    {
+      "name": "addTopic",
+      "accounts": [
+        {
+          "name": "topic",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "author",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "topicStr",
+          "type": "string"
+        },
+        {
+          "name": "tag",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "editAnnotation",
+      "accounts": [
+        {
+          "name": "annotation",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "author",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "parentTopic",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "oldAnnotation",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "annotationStr",
+          "type": "string"
+        },
+        {
+          "name": "uri",
+          "type": "string"
+        },
+        {
+          "name": "snippetType",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "addAnnotation",
+      "accounts": [
+        {
+          "name": "annotation",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "author",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "parentTopic",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "annotationStr",
+          "type": "string"
+        },
+        {
+          "name": "uri",
+          "type": "string"
+        },
+        {
+          "name": "snippetType",
+          "type": "u8"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Topic",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "author",
+            "type": "publicKey"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          },
+          {
+            "name": "allegations",
+            "type": "u8"
+          },
+          {
+            "name": "support",
+            "type": "u8"
+          },
+          {
+            "name": "against",
+            "type": "u8"
+          },
+          {
+            "name": "tag",
+            "type": "string"
+          },
+          {
+            "name": "topic",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Annotation",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "author",
+            "type": "publicKey"
+          },
+          {
+            "name": "parent",
+            "type": "publicKey"
+          },
+          {
+            "name": "parentTopic",
+            "type": "publicKey"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          },
+          {
+            "name": "snippetType",
+            "type": "u8"
+          },
+          {
+            "name": "allegations",
+            "type": "u8"
+          },
+          {
+            "name": "support",
+            "type": "u8"
+          },
+          {
+            "name": "against",
+            "type": "u8"
+          },
+          {
+            "name": "isEdited",
+            "type": "u8"
+          },
+          {
+            "name": "editedOn",
+            "type": "i64"
+          },
+          {
+            "name": "edited",
+            "type": "publicKey"
+          },
+          {
+            "name": "uri",
+            "type": "string"
+          },
+          {
+            "name": "annotation",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "AnnotationTooLong",
+      "msg": "The provided annotation should be 250 characters long maximum."
+    },
+    {
+      "code": 6001,
+      "name": "URITooLong",
+      "msg": "The provided content should be 250 characters long maximum."
+    },
+    {
+      "code": 6002,
+      "name": "TopicTooLong",
+      "msg": "The provided content should be 150 characters long maximum."
+    },
+    {
+      "code": 6003,
+      "name": "TagTooLong",
+      "msg": "The provided content should be 50 characters long maximum."
+    },
+    {
+      "code": 6004,
+      "name": "ParentAccountNotFound",
+      "msg": "Parent Account not found"
+    },
+    {
+      "code": 6005,
+      "name": "ParentAccountInfoNotFound",
+      "msg": "Parent Account Info not found"
+    },
+    {
+      "code": 6006,
+      "name": "ParentAccountNotWritable",
+      "msg": "Failed to write Parent Account"
+    },
+    {
+      "code": 6007,
+      "name": "DataTypeMismatch",
+      "msg": "Account Data Mismatch"
+    }
+  ],
+  "metadata": {
+    "address": "DjEMjxwVGj65CF22aS7davstDVbfNfeTDzAYgSk2XMch"
+  }
+}
