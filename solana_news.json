@@ -218,7 +218,7 @@
     {
       "code": 6000,
       "name": "AnnotationTooLong",
-      "msg": "The provided annotation should be 250 characters long maximum."
+      "msg": "The provided annotation should be 600 characters long maximum."
     },
     {
       "code": 6001,
@@ -257,6 +257,6 @@
     }
   ],
   "metadata": {
-    "address": "DjEMjxwVGj65CF22aS7davstDVbfNfeTDzAYgSk2XMch"
+    "address": "HsmqAxBShotA5CCn9w6QZn1jZnsKwffkjhuzc4ChvDQE"
   }
 }
