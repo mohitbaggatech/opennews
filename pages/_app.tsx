@@ -27,10 +27,8 @@ import { ThemeProvider } from 'next-themes'
 // Default styles that can be overridden by your app
 require('@solana/wallet-adapter-react-ui/styles.css');
 
-const SOLANA_NEWS_PROGRAM = "HsmqAxBShotA5CCn9w6QZn1jZnsKwffkjhuzc4ChvDQE";
-// const SOLANA_NEWS_PROGRAM = "DjEMjxwVGj65CF22aS7davstDVbfNfeTDzAYgSk2XMch";
-// const SOLANA_NEWS_PROGRAM = "F57bCbfwFApSLvMkZJ63AdSTmzQTq6PU3HrjNy2KU8f5"
-// const SOLANA_NEWS_PROGRAM = "BZzabrjKSxajzg345WeiKTBzNFsE4wDMeKMeasZo4WAb";
+const SOLANA_NEWS_PROGRAM = "EuZv7u7CzDaSrpL3TbzR749NQ49A3YRQ1iNQUiBSpP3M";
+
 export const programID = new PublicKey(SOLANA_NEWS_PROGRAM);
 
 
